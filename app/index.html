@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>VueJS</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 </head>
 <body>
+<main>
+    <h1>TODO LIST:</h1>
     <div id="vueApp">
-        <p>{{ message }}</p>
-        <input type="text" v-model="message">
-        <button v-on:click="reverseMessage">Reverse Message</button>
-        <hr>
-        <input type="text" v-model="newTodo" v-on:keyup.enter="addTodo">
+        <p>New Todo:</p>
+        <input v-model="currTodo" value="">
+        <input v-on:click="addTodo" :disabled="currTodo.length === 0" type="button" value="Add">
         <ul>
             <li v-for="todo in todos">
-                <span>{{ todo.text }}</span>
-                <button v-on:click="removeToDo($index)">X</button>
+                <span v-if="!todo.editing">{{todo.name}}</span>
+                <input v-if="todo.editing" v-model="todo.name">
+                <input v-if="!todo.editing" v-on:click="edit(todo)" type="button" value="edit">
+                <input v-if="todo.editing" v-on:click="save(todo)" type="button" value="save">
+                <input v-if="!todo.editing" v-on:click="remove(todo)" type="button" value="remove">
             </li>
         </ul>
     </div>
-    <script type="text/javascript" src="lib/vue.js"></script>
-    <script type="text/javascript" src="src/app.js"></script>
+</main>
+<script type="text/javascript" src="lib/vue.js"></script>
+<script type="text/javascript" src="src/app.js"></script>
 </body>
 </html>

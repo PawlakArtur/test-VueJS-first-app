@@ -1,27 +1,25 @@
 var vueApp = new Vue({
     el: '#vueApp',
     data: {
-        message: 'Hello Vue.js',
-        newToDo: '',
-        todos: [
-            { text: 'Learn JavaScript' },
-            { text: 'Learn Vue.js '},
-            { text: 'Build Something Awesome'}
-        ]
+        todos: [{ name: 'Task' }],
+        currTodo: "",
     },
     methods: {
-        reverseMessage: function () {
-            this.message = this.message.split('').reverse().join('')
+        addTodo: function(){
+            this.todos.push({name:this.currTodo,editing:false});
+            this.currTodo = "";
         },
-        addTodo: function () {
-            var text = this.newTodo.trim()
-            if (text) {
-                this.todos.push({text: text})
-                this.newTodo = ''
-            }
+        remove: function(todo) {
+            var index = this.todos.indexOf(todo);
+            this.todos.splice(index,1);
         },
-        removeToDo: function (index) {
-            this.todos.splice(index, 1)
-        }
+        edit: function(todo) {
+            var index = this.todos.indexOf(todo);
+            this.todos[index].editing = true;
+        },
+        save: function(todo) {
+            var index = this.todos.indexOf(todo);
+            this.todos[index].editing = false;
+        },
     }
 })
