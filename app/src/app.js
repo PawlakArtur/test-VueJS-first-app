@@ -2,10 +2,10 @@ var vueApp = new Vue({
     el: '#vueApp',
     data: {
         todos: [
-            { name: 'Learn JavaScript' },
-            { name: 'Learn Vue.js '},
-            { name: 'Write first task' },
-            { name: 'Build Something Awesome'}
+            { name: 'Learn JavaScript', editing: false},
+            { name: 'Learn Vue.js', editing: false},
+            { name: 'Write first task', editing: false},
+            { name: 'Build Something Awesome', editing: false}
         ],
         currTodo: "",
     },
