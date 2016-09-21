@@ -23,6 +23,20 @@
             </li>
         </ul>
     </div>
+    <div id="demo">
+        <div>
+            <label>First name</label>
+            <input type="text" v-model="firstName">
+        </div>
+        <div>
+            <label>Last name</label>
+            <input type="text" v-model="lastName">
+        </div>
+        <div>
+            <label>Full name:</label>
+            {{fullName}}
+        </div>
+    </div>
 </main>
 <script type="text/javascript" src="lib/vue.js"></script>
 <script type="text/javascript" src="src/app.js"></script>

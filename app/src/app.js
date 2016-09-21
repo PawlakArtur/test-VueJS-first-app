@@ -27,4 +27,17 @@ var vueApp = new Vue({
             this.todos[index].editing = false;
         },
     }
+});
+
+var vm = new Vue({
+    el: '#demo',
+    data: {
+        firstName: 'Foo',
+        lastName: 'Bar'
+    },
+    computed: {
+        fullName: function () {
+            return this.firstName + ' ' + this.lastName
+        }
+    }
 })
