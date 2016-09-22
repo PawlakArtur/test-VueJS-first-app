@@ -14,7 +14,7 @@
         <input v-model="currTodo" value="">
         <input v-on:click="addTodo" :disabled="currTodo.length === 0" type="button" value="Add">
         <ul>
-            <li v-for="todo in todos" v-bind:class="background">
+            <li v-for="todo in todos" v-bind:class="[background, getBorder]">
                 <span v-if="!todo.editing" v-bind:class="{'black': font.black, 'white': font.white}">{{todo.name}}</span>
                 <input v-if="todo.editing" v-model="todo.name">
                 <input v-if="!todo.editing" v-on:click="edit(todo)" type="button" value="edit">
@@ -36,6 +36,9 @@
         <label for="red">Red background</label>
         <br>
         <div>Picked: {{ background }}</div>
+        <br>
+        <input id="border" type="checkbox" v-model="border.pink">
+        <label for="border"></label>
     </div>
     <div id="demo">
         <div>

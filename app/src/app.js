@@ -10,8 +10,11 @@ var vueApp = new Vue({
         currTodo: "",
         background: 'blue',
         font: {
-            'white': true,
-            'black': false
+            'black': false,
+            'white': false
+        },
+        border: {
+            'pink': true
         }
     },
     methods: {
@@ -31,6 +34,11 @@ var vueApp = new Vue({
             var index = this.todos.indexOf(todo);
             this.todos[index].editing = false;
         },
+    },
+    computed: {
+        getBorder: function() {
+            return this.border;
+        }
     }
 });
 

@@ -23,6 +23,7 @@ main ul {
 
 main li {
     margin: 0 auto 10px;
+    border: 2px solid transparent;
 }
 
 main ul li:after {
@@ -45,4 +46,7 @@ main ul li:after {
 }
 .black {
     color: #000;
+}
+.pink {
+    border: 2px solid pink;
 }
