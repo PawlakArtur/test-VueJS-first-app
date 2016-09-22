@@ -8,6 +8,11 @@ var vueApp = new Vue({
             { name: 'Build Something Awesome', editing: false}
         ],
         currTodo: "",
+        background: 'blue',
+        font: {
+            'white': true,
+            'black': false
+        }
     },
     methods: {
         addTodo: function(){

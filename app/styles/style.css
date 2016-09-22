@@ -32,3 +32,17 @@ main ul li:after {
     height: 2px;
     background: linear-gradient(to right, transparent 0%,#5A5A5A 10%,#5A5A5A 90%,transparent 100%);
 }
+
+.blue {
+    background: #aedbff;
+}
+
+.red {
+    background: #ff9ea0;
+}
+.white {
+    color: #fff;
+}
+.black {
+    color: #000;
+}
