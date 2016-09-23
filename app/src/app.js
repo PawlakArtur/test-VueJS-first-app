@@ -46,7 +46,9 @@ var vm = new Vue({
     el: '#demo',
     data: {
         firstName: 'Foo',
-        lastName: 'Bar'
+        lastName: 'Bar',
+        showFullName: true,
+        showNames: true
     },
     computed: {
         fullName: {

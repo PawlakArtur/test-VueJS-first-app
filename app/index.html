@@ -36,22 +36,39 @@
         <label for="red">Red background</label>
         <br>
         <div>Picked: {{ background }}</div>
-        <br>
+        <label for="border">Show border?</label>
         <input id="border" type="checkbox" v-model="border.pink">
-        <label for="border"></label>
+        <br>
+        <br>
     </div>
     <div id="demo">
         <div>
-            <label>First name</label>
-            <input type="text" v-model="firstName">
+            <label for="showFull">Show full name?</label>
+            <input id="showFull" type="checkbox" v-model="showFullName">
+        </div>
+        <div v-show="showFullName">
+            <label for="full-name">Full name:</label>
+            <input id="full-name" type="text" v-model="fullName">
+        </div>
+        <div v-else>
+            <p>Nothing to show</p>
         </div>
         <div>
-            <label>Last name</label>
-            <input type="text" v-model="lastName">
+            <label for="showNames">Show first name and last name?</label>
+            <input id="showNames" type="checkbox" v-model="showNames">
         </div>
-        <div>
-            <label>Full name:</label>
-            <input type="text" v-model="fullName">
+        <template v-if="showNames">
+            <div>
+                <label>First name</label>
+                <input type="text" v-model="firstName">
+            </div>
+            <div>
+                <label>Last name</label>
+                <input type="text" v-model="lastName">
+            </div>
+        </template>
+        <div v-else>
+            <p>Nothing to show</p>
         </div>
     </div>
 </main>
