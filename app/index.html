@@ -40,6 +40,10 @@
         <input id="border" type="checkbox" v-model="border.pink">
         <br>
         <br>
+        <input type="checkbox" v-model="transition">
+        <div v-if="transition" transition="expand">test</div>
+        <input type="text" v-model="greetingMsg">
+        <my-component :msg="greetingMsg"></my-component>
     </div>
     <div id="demo">
         <div>

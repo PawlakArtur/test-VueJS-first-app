@@ -50,3 +50,20 @@ main ul li:after {
 .pink {
     border: 2px solid pink;
 }
+
+.expand-transition {
+    color: red;
+    transition: all .3s ease;
+}
+
+.expand-enter {
+    height: 10px;
+    padding: 0 10px;
+    opacity: 0;
+}
+
+.expand-leave {
+    height: 10px;
+    padding: 0 10px;
+    opacity: 0;
+}

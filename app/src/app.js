@@ -1,3 +1,8 @@
+var MyComponent = Vue.extend({
+    props: ['msg'],
+    template: '<div>Hello {{msg}}</div>'
+})
+Vue.component('my-component', MyComponent)
 var vueApp = new Vue({
     el: '#vueApp',
     data: {
@@ -15,7 +20,8 @@ var vueApp = new Vue({
         },
         border: {
             'pink': true
-        }
+        },
+        transition: true
     },
     methods: {
         addTodo: function(){
